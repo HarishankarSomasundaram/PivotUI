@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View1</title>
+
+    
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@      
+    <link href="~/Content/example.css" rel="stylesheet" />
+    <link href="~/Content/jqtree.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>    
+    @*<script src="~/Scripts/jquery-mockjax/jquery.mockjax.js"></script>*@  
+    <script src="~/Scripts/tree.jquery/tree.jquery.js"></script>
+
+    <script>
+        var data = [
+    {
+        label: 'node1',
+        children: [
+        { label: 'child1' },
+        { label: 'child2' },
+        { label: 'child1' },
+            { label: 'child2' },
+        { label: 'child1' },
+        { label: 'child2' },
+        { label: 'child1' },
+        { label: 'child2' },
+        { label: 'child1' },
+        { label: 'child2' }
+        ]
+    },
+    {
+        label: 'node2',
+        children: [
+            { label: 'child3' }
+        ]
+    }
+        ];
+
+        $(function () {
+            var $tree = $('#tree1');
+            $tree.tree({
+                data: data,
+                dragAndDrop: true,
+                autoOpen: true
+            });
+        });
+
+
+        //$(function () {
+        //    var $tree = $('#tree1');
+        //    $tree.tree({
+        //        data: data,
+        //        dragAndDrop: true,
+        //        autoOpen: true
+
+        //    });
+        //});
+    </script>
+     
+</head>
+<body>
+    <div id="scroll-container" >
+        <div id="tree1"></div>
+
+    </div>
+</body>
+</html>
